@@ -5,36 +5,61 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body
-    nav.navbar.navbar-inverse.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target="#navbarEexample"]
-            span.sr-only
-              | Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand[href="/home"]
-            span.glyphicon.glyphicon-home
-            |  dynaTraceポータル
-        #navbarEexample.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li.active
-              a[href="#"]
-                | メニューＡ
+  body.no-thank-yu
+    nav.navbar.navbar-fixed-top role="navigation"
+      .navbar-header
+        a.navbar-brand href="/"
+          span.glyphicon.glyphicon-home
+          |  dynaTraceポータル
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" style="margin: 0px 30px; padding:10px 0px;"
+            | ログイン
+            b.caret
+          ul.dropdown-menu style="padding: 15px;margin: 10px 40px; min-width: 250px;"
             li
-              a[href="#"]
-                | メニューＢ
-            li
-              a[href="#"]
-                | メニューＣ
+              / form#login-nav.form role="form" method="post" action="login" accept-charset="UTF-8"
+              = form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: "login-nav", class: "form", role: "form"}) do |f|
+
+                .form-group
+                  label.sr-only for="exampleInputEmail2"
+                    | Email address
+                  input#exampleInputEmail2.form-control type="email" placeholder="Email address" required=""
+                .form-group
+                  label.sr-only for="exampleInputPassword2"
+                    | Password
+                  input#exampleInputPassword2.form-control type="password" placeholder="Password" required=""
+                .checkbox
+                  label
+                    input type="checkbox"
+                    |  Remember me
+                .form-group
+                  button.btn.btn-primary.btn-block type="submit"
+                    | ログイン
+
+
+
+
+
+
     - if notice
       p.alert.alert-success = notice
     - if alert
-      p.alert.alert-danget = alert
+      .alert.alert-warning.alert-dismissible role="alert"
+        button.close type="button" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="true" &times;
+        = alert
 
     = yield
 
 css:
-  body { padding-top: 70px }
+  body { padding-top: 45px }
+  .navbar{
+    min-height: 40px !important
+  }
+
+  .navbar-brand {
+    height: 40px;
+    padding: 10px 15px;
+  }
+

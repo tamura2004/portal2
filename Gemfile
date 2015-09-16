@@ -36,7 +36,7 @@ end
 ## I18m
 gem "rails-i18n"
 
-## seed
+## seedu
 gem "seed-fu"
 
 ## slim
@@ -45,10 +45,13 @@ gem "redcarpet"
 
 ## bootstrap/font-awesome
 source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap-sass-official'
-  gem 'rails-assets-bootswatch-sass'
-  gem 'rails-assets-fontawesome'
+  gem 'rails-assets-honoka'
+  # gem 'rails-assets-bootstrap-sass-official'
+  # gem 'rails-assets-bootswatch-sass'
+  # gem 'rails-assets-fontawesome'
 end
+
+gem "simple_form"
 
 ## devise
 gem "devise"
