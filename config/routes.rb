@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'reservations#index'
+  devise_for :users
+  get 'home/index'
+  root 'home#index'
+  
   resources :reservations
 
   # The priority is based upon order of creation: first created -> highest priority.

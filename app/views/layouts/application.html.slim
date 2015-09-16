@@ -6,7 +6,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    nav.navbar.navbar-default.navbar-fixed-top
+    nav.navbar.navbar-inverse.navbar-fixed-top
       .container-fluid
         .navbar-header
           button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target="#navbarEexample"]
@@ -15,8 +15,9 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand[href="#"]
-            | タイトル
+          a.navbar-brand[href="/home"]
+            span.glyphicon.glyphicon-home
+            |  dynaTraceポータル
         #navbarEexample.collapse.navbar-collapse
           ul.nav.navbar-nav
             li.active
@@ -28,6 +29,11 @@ html
             li
               a[href="#"]
                 | メニューＣ
+    - if notice
+      p.alert.alert-success = notice
+    - if alert
+      p.alert.alert-danget = alert
+
     = yield
 
 css:
