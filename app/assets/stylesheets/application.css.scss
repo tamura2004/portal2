@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+$icon-font-path: "bootstrap-sass-official";
+
+@import "bootstrap-sass-official";
+// @import "bootswatch-sass/flatly/variables";
+// @import "bootswatch-sass/flatly/bootswatch";
+// @import "bootswatch-sass/flatly/bootstrap";

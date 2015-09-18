@@ -123,7 +123,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.1)
       sprockets-rails
-    rails-assets-honoka (3.3.5)
+    rails-assets-bootstrap-sass-official (3.2.0.2)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-bootswatch-sass (3.3.1)
+      rails-assets-bootstrap-sass-official (~> 3.2.0)
+    rails-assets-jquery (2.1.4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -176,7 +180,7 @@ GEM
     seed-fu (2.3.5)
       activerecord (>= 3.1, < 4.3)
       activesupport (>= 3.1, < 4.3)
-    simple_form (3.1.0)
+    simple_form (3.1.1)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slim (3.0.6)
@@ -237,7 +241,8 @@ DEPENDENCIES
   launchy
   pry-rails
   rails (= 4.2.1)
-  rails-assets-honoka!
+  rails-assets-bootstrap-sass-official!
+  rails-assets-bootswatch-sass!
   rails-i18n
   redcarpet
   rspec-rails

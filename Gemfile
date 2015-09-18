@@ -45,9 +45,9 @@ gem "redcarpet"
 
 ## bootstrap/font-awesome
 source 'https://rails-assets.org' do
-  gem 'rails-assets-honoka'
-  # gem 'rails-assets-bootstrap-sass-official'
-  # gem 'rails-assets-bootswatch-sass'
+  # gem 'rails-assets-honoka'
+  gem 'rails-assets-bootstrap-sass-official'
+  gem 'rails-assets-bootswatch-sass'
   # gem 'rails-assets-fontawesome'
 end
 
