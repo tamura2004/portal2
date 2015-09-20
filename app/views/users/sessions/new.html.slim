@@ -1,36 +1,48 @@
-.container#users-sessions-container
-  .row
-    .col-md-4.col-md-offset-4
-      .panel.panel-primary#users-sessions-panel
-        .panel-heading#users-sessions-headings
-          h2 style="text-align: center"
-            span.glyphicon.glyphicon-user
-            |  ログイン
-        .panel-body
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            fieldset
-              .form-group
-                = f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control"
+form role="form"
+  .form-group
+    label.col-md-4 for="users_sessions_new_email" メールアドレス
+    .col-md-8
+      input.form-control type="email" id="users_sessions_new_email"
+  .form-group
+    label for="users_sessions_new_password" パスワード
+    input.form-control type="password" id="users_sessions_new_password"
+  button.btn type="submit" ログイン
 
-              .form-group
-                = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control"
 
-              - if devise_mapping.rememberable?
-                .checkbox
-                  label
-                    = f.check_box :remember_me
-                    = f.label :remember_me
-              = f.submit "ＯＫ", class: "btn btn-primary btn-block"
 
-            = render "users/shared/links"
+
+
+.panel.panel-default
+  .panel-heading
+    h2 style="text-align: center"
+      span.glyphicon.glyphicon-user ログイン
+  .panel-body
+    = form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f|
+      .form-group
+        label.control-label.col-md-3 for="email" メールアドレス
+        = f.email_field :email, autofocus: true, id:"email", placeholder: "メールアドレス"
+
+      = f.label :password
+      = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
+
+      - if devise_mapping.rememberable?
+        .checkbox
+          label
+            = f.check_box :remember_me
+            = f.label :remember_me
+      = f.submit "ＯＫ", class: "btn btn-primary btn-block"
+
+      = render "users/shared/links"
 
 css:
   #users-sessions-container{
     margin-top: 120px;
   }
+
   #users-sessions-panel{
     border-color: steelBlue;
   }
+
   #users-sessions-headings{
     background-color: steelBlue;
   }

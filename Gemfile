@@ -26,6 +26,11 @@ group :development,:test do
   gem "factory_girl_rails"
 end
 
+group :development do
+  gem "guard"
+  gem "guard-livereload"
+end
+
 group :test do
   gem "faker"
   gem "capybara"
@@ -40,18 +45,9 @@ gem "rails-i18n"
 gem "seed-fu"
 
 ## slim
+gem "bootstrap-sass"
 gem "slim-rails"
 gem "redcarpet"
-
-## bootstrap/font-awesome
-source 'https://rails-assets.org' do
-  # gem 'rails-assets-honoka'
-  gem 'rails-assets-bootstrap-sass-official'
-  gem 'rails-assets-bootswatch-sass'
-  # gem 'rails-assets-fontawesome'
-end
-
-gem "simple_form"
 
 ## devise
 gem "devise"
